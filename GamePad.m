@@ -107,8 +107,6 @@
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
 
-    [super ccTouchEnded:touch withEvent:event];
-
     CGPoint location	= [touch locationInView: [touch view]];
 	location			= [[CCDirector sharedDirector] convertToGL:location];
 
@@ -127,5 +125,8 @@
         }
         isActivated = NO;
     }
+    else
+        [super ccTouchEnded:touch withEvent:event];
+    
 }
 @end
